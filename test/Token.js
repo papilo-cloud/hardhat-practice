@@ -36,7 +36,7 @@ describe('Token contract', () => {
         it('Should fail if sender doesnt have enough tokens', async () => {
             const initialOwnerBal = await token.balanceOf(owner.address);
             await expect(token.connect(addr1).transfer(addr2.address, 10)).to.be.revertedWith('not enough tokens');
-            expect(await token.balanceOf(owner.address)).to.equal(initialOwnerBal);
+            expect(await token.balanceOf(owner.address)).to.equal(initialOwnerBal)
         })
     })
 })
